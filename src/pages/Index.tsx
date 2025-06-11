@@ -85,19 +85,19 @@ const medicalEquipment = [
 ];
 
 const ProductCard = ({ product, onViewDetails, isActive }) => (
-  <div className={`bg-card border border-border rounded-lg p-3 transition-all duration-300 hover:shadow-lg hover:border-primary/50 cursor-pointer ${isActive ? 'border-primary shadow-md' : ''}`}>
+  <div className={`bg-card border border-border rounded p-1.5 transition-all duration-300 hover:shadow-md hover:border-primary/50 cursor-pointer ${isActive ? 'border-primary shadow-sm' : ''}`}>
     <img 
       src={product.image} 
       alt={product.name}
-      className="w-full h-24 object-cover rounded-md mb-2"
+      className="w-full h-12 object-cover rounded mb-1"
     />
-    <h3 className="font-semibold text-sm text-card-foreground mb-1 line-clamp-2">{product.name}</h3>
-    <p className="text-primary font-bold text-sm mb-2">{product.price}</p>
+    <h3 className="font-medium text-xs text-card-foreground mb-0.5 line-clamp-1">{product.name}</h3>
+    <p className="text-primary font-semibold text-xs mb-1">{product.price}</p>
     <button 
       onClick={() => onViewDetails(product)}
-      className="w-full bg-primary text-primary-foreground text-xs py-1.5 px-3 rounded hover:bg-primary/90 transition-colors"
+      className="w-full bg-primary text-primary-foreground text-xs py-1 px-2 rounded hover:bg-primary/90 transition-colors"
     >
-      Batafsil ko'rish
+      Batafsil
     </button>
   </div>
 );
@@ -171,10 +171,10 @@ const Index = () => {
           Tibbiy Uskunalar Katalogi
         </h1>
         
-        <div className="flex gap-6 h-[calc(100vh-8rem)]">
+        <div className="flex gap-4 h-[calc(100vh-8rem)]">
           {/* Product Grid - Single Column */}
-          <div className="w-80 flex-shrink-0">
-            <div className="grid grid-cols-1 gap-3 h-full overflow-y-auto pr-2">
+          <div className="w-56 flex-shrink-0">
+            <div className="grid grid-cols-1 gap-1.5 h-full">
               {medicalEquipment.map((product) => (
                 <ProductCard 
                   key={product.id} 
